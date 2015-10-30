@@ -5,6 +5,10 @@ body {
 	text-align: center;
 }
 
+ol {
+	text-align: left;
+}
+
 input {
 	border-color: rgb(102, 153, 153);
 	border-width: 3px;

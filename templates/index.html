@@ -10,10 +10,12 @@
 		
 	<script type="text/javascript" src="static/js/jquery-1.11.3.js"></script>
 	<script type="text/javascript" src="static/js/script.js"></script>
-
-<!--add an ordered list of instructions to satisfy tags req.?-->
-
-		<form id="userinput" action="/create" method="post">
+		<ol>
+			<li>Enter the full URL of a page to redirect to in the top field.</li>
+			<li>Enter the shortened path (letters only) you'd like to use in the lower field.</li>
+			<li>Push the button at bottom.  Voila!  The path "short/(yourword)" will now redirect to the full URL.</li>		
+		</ol>
+	<form id="userinput" action="/create" method="post">
 			<input id="input_url" name="input_url" type="text">
 			<br>
 			<label for="input_url">Enter the full URL in the field above.</label>
