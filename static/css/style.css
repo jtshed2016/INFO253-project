@@ -1,5 +1,29 @@
-html {
-	color: rgba(0, 0, 0, 0);
+body {
+	background-color: rgb(102, 102, 153);
+	font-family: "Lucida Console", monospace;
+	color: rgb(243, 243, 255);
+	text-align: center;
 }
 
+input {
+	border-color: rgb(102, 153, 153);
+	border-width: 3px;
+	border-radius: 5px;
+	background-color: rgb(102, 102, 153);
+}
 
+h1 {
+	font-weight: bolder;
+	border-width: 5px;
+	border-color: rgb(102, 153, 153);
+}
+
+#saveurl {
+	color: grey;
+	background-color: rgb(209, 209, 224);
+}
+
+.output {
+	font-weight: bold;
+	color: rgb(255, 0, 0);
+}

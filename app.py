@@ -22,6 +22,7 @@ def index():
     Builds a template based on a GET request, with some default
     arguments
     """
+    
 
     return flask.render_template('index.html')
 
@@ -39,15 +40,31 @@ def create():
     This POST request creates an association between a short url and a full url
     and saves it in the database (the dictionary db)
     """
-    raise NotImplementedError     
+    
+    target_url = request.form['input_url']
+    shortened_url = request.form['input_short']
+    db[shortened_url] = target_url
+    
+    
+    return flask.render_template('success.html', target=target_url, shortened=shortened_url, tfromdb = db[shortened_url])
+    #raise NotImplementedError     
 
 @app.route("/short/<short>", methods=['GET'])
-def redirect(short):
+def point_to_url(short):
     """
     Redirect the request to the URL associated =short=, otherwise return 404
     NOT FOUND
     """
-    raise NotImplementedError 
+    if short in db:
+    	return redirect(db[short], code=302)
+    else:
+    	abort(404)
+    
+    #raise NotImplementedError 
+
+@app.errorhandler(404)
+def nopath(error):
+	return render_template('notfound.html'), 404
 
 if __name__ == "__main__":
     app.run()
