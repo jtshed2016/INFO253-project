@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<title>{{identifier}}</title>
+		<!--includes map style elements from Google Maps example-->
+		<link rel="stylesheet" href="http://127.0.0.1:5000/static/css/style.css">
+	</head>
+	
+	<body>
+	
+	<script type="text/javascript" src="http://127.0.0.1:5000/static/js/jquery-1.11.3.js"></script>
+	<script type="text/javascript" src="http://127.0.0.1:5000/static/js/script.js"></script>
+	
+		<div id="header">
+			<h1>Manuscript Information</h1>
+		</div>
+		
+		<div id="titlediv" class="infoelement">	
+			<h2>Title</h2>
+			<p>{{title}}</p>
+		</div>	
+			
+		<div id="authordiv" class="infoelement">
+			<h2>Author</h2>
+			<p>{{author}}</p>
+		</div>
+		
+		<div id="placediv" class="infoelement">
+			<h2>Place</h2>
+			<p>{{place}}</p>
+		</div>
+		
+		<div id="languagediv" class="infoelement">
+			<h2>Language</h2>
+			<p>{{language}}</p>
+		</div>
+		
+		<div id="descdiv" class="infoelement">
+			<h2>Description</h2>
+			<p>{{desc}}</p>
+		</div>
+		
+		
+		<div id="mapdiv"></div>
+		<!--map script adapted from Google's developer reference-->
+			<script type="text/javascript">
+			
+			//var originMap;
+			function initMap() {
+				var originMap = new google.maps.Map(document.getElementById('mapdiv'), {
+					center: { lat: {{originlat}}, lng: {{originlon}} },
+					zoom: 6
+				});
+					
+				var publicationPointer = new google.maps.Marker({
+					position: {lat: {{originlat}}, lng: {{originlon}} },
+					map: originMap,
+					title: 'Approximate place of publication'
+				});
+			}
+			</script>
+			
+			<script async defer
+			src="https://maps.googleapis.com/maps/api/js?key={{googleapi}}&callback=initMap">
+			</script>
+		
+	</body>
+
+</html>

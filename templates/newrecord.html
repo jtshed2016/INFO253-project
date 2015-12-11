@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en-us">
+	<head>
+		<title>New Record</title>
+		<link rel="stylesheet" href="http://127.0.0.1:5000/static/css/style.css">
+	</head>
+	
+	<body>
+		
+		<script type="text/javascript" src="http://127.0.0.1:5000/static/js/jquery-1.11.3.js"></script>
+		<script type="text/javascript" src="http://127.0.0.1:5000/static/js/script.js"></script>
+		<div id="header">
+			<h1>Add New Record</h1>
+		</div>
+		
+		<div id="instructions">
+			<ul>
+				<li>Enter the requested information in the appropriate fields below.</li>
+				<li>If information for a field is unavailable, enter "N/A".</li>
+				<li>Enter the shelfmark carefully in the following format: collection + "MS" + number.  Do not use spaces.  This will serve as the URL for the manuscript.  </li>
+			
+			</ul>
+		</div>
+		
+		
+		<div id="inputdiv">
+			<form id="newrecordform" action="/newrecord" method="post">
+				<input name="identifier" id="identifier" type="text">
+				<br>
+				<label for="identifier">Enter the shelfmark of the manuscript .</label>
+				<br>
+				
+				
+				<input name="mstitle" id="mstitle" type="text">
+				<br>
+				<label for="mstitle">Enter the title of the manuscript.</label>
+				<br>
+				
+				<input name="msauthor" id= "msauthor" type="text">
+				<br>
+				<label for="msauthor">Enter the author of the work.</label>
+				<br>
+				
+				<input name="msplace" id="msplace" type="text">
+				<br>
+				<label for="msplace">Enter the place of publication.</label>
+				<br>
+				
+				<input name="mslang" id="mslang" type="text">
+				<br>
+				<label for="mslang">Enter the text language.</label>
+				<br>
+				<input name="msdescription" id= "msdescription" type="text">
+				<br>
+				<label for="msdescription">Provide a brief description of the manuscript.</label>
+				<br>
+				
+				<input id="recordsubmit" type="submit" value="Save Record" disabled>	
+			</form>
+		</div>
+		
+	</body>
+
+
+</html>
