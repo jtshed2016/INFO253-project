@@ -11,11 +11,11 @@
 	<script type="text/javascript" src="http://127.0.0.1:5000/static/js/jquery-1.11.3.js"></script>
 	<script type="text/javascript" src="http://127.0.0.1:5000/static/js/script.js"></script>
 	
-		<div id="header">
+		<div class="header">
 			<h1>Manuscript Information</h1>
 		</div>
 		
-		<div id="titlediv" class="infoelement">	
+		<div id="titlediv" class="infoelement" onload="checkna">	
 			<h2>Title</h2>
 			<p>{{title}}</p>
 		</div>	
@@ -64,6 +64,9 @@
 			src="https://maps.googleapis.com/maps/api/js?key={{googleapi}}&callback=initMap">
 			</script>
 		
+		<div class="footer">
+			<a href="/">Home</a>
+		</div>
 	</body>
 
 </html>

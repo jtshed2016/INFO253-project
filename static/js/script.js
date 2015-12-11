@@ -1,8 +1,4 @@
-//define a regular expression pattern to test for letters
-var allLetters = /^[A-Za-z]+$/;
-var newRecordFields = [0,0,0,0,0,0]
-//flags for whether new records are filled in: 0-shelfmark/identifier, 1-title,
-//2-author, 3-place, 4-language, 5-description
+
 
 function makeTableFromJson(recordObject) {
 	console.log(typeof(recordObject));
@@ -18,13 +14,15 @@ function makeTableFromJson(recordObject) {
 	$("#mssinfotable").html(tableText);
 }
 
+
+
 $(document).ready(function() {
 	if ($("#titlediv p").text() === 'N/A') {
 		$("titlediv").css('display', 'none');
 		console.log("success");
 	}
 
-
+	
 
 
 
@@ -44,7 +42,9 @@ $( "#input_short").keyup(function() {
 		}
 	});
 	
-
+var newRecordFields = [0,0,0,0,0,0]
+//flags for whether new records are filled in: 0-shelfmark/identifier, 1-title,
+//2-author, 3-place, 4-language, 5-description
 //check each field for blankness; set flag to 1 or 0
 
 	$("#identifier").keyup(function() {
@@ -135,6 +135,10 @@ $( "#input_short").keyup(function() {
 			$("#saveurl").css('background-color', 'rgb(209, 209, 224)');
 		}
 	});
+	
+			
+
+
 	
 
 	

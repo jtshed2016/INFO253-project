@@ -1,0 +1,1 @@
+This project uses a Shelve database to store records.  On startup, this is populated with information from a JSON file (currently set to newtext_short.json).  The site will generate the database and run without this file, but there will be nothing to display.  
